@@ -1,4 +1,4 @@
-
+import os
 import logging
 import sqlite3
 import asyncio
@@ -16,13 +16,16 @@ from telegram.ext import (
     CallbackQueryHandler, ContextTypes, filters
 )
 
-TOKEN ="8613908449:AAGKAjqqM-KXt_1VYl3wKDAr0p>"
 ADMIN_ID = 6684007846
 AUTO_DELETE_SECONDS = 600
 
 logging.basicConfig(level=logging.INFO)
 
-db = sqlite3.connect("/var/data/files.db", check_same_thread=False)
+import os
+
+DB_PATH = os.getenv("DB_PATH", "files.db")
+db = sqlite3.connect(DB_PATH, check_same_thread=False)
+
 db.execute("""
 CREATE TABLE IF NOT EXISTS files (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
