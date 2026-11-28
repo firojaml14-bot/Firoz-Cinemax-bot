@@ -15,7 +15,7 @@ AUTO_DELETE_SECONDS = 600
 
 logging.basicConfig(level=logging.INFO)
 
-db = sqlite3.connect("files.db", check_same_thread=False)
+db = sqlite3.connect("/var/data/files.db", check_same_thread=False)
 
 db.execute("""
 CREATE TABLE IF NOT EXISTS files (
