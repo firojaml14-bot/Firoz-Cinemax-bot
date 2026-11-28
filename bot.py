@@ -1,9 +1,8 @@
-  GNU nano 9.3              bot.py
-import os
-from dotenv import load_dotenv
-
+ from dotenv import load_dotenv
 load_dotenv()
-                                                           TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("BOT_TOKEN")  
+TOKEN = os.getenv("BOT_TOKEN")
+
 import logging
 import sqlite3
 import asyncio
